@@ -1,5 +1,12 @@
 from bs4 import BeautifulSoup
 
+FIM_URL_PREFIX = 'https://www.fim.uni-passau.de'
+
+def _convert_to_full_url(url):
+    if not url.startswith('http'):
+        return FIM_URL_PREFIX + url
+    return url
+
 '''
 This function parses the chair overview page.
 It finds the links to the chairs.
@@ -20,6 +27,10 @@ def parse_chair_page(chair_page):
         tdTags = trTag.find_all('td')
         if len(tdTags) > 1:
             linkToChair = tdTags[1].find('a').get('href')
+
+            # the link may be relative, so we need to add the prefix
+            linkToChair = _convert_to_full_url(linkToChair)
+
             linksToChairs.append(linkToChair)
 
     return linksToChairs
@@ -44,8 +55,11 @@ def parse_chair_landingpage(chair_landingpage):
         if link.text.lower().find('team') != -1:
             linkToTeam = link.get('href')
             break
+    
+    if linkToTeam is None:
+        raise Exception('Failed to find link to team page')
 
-    return chairName, linkToTeam
+    return chairName, _convert_to_full_url(linkToTeam)
 
 '''
 This function parses the chair team page.
