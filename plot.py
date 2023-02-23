@@ -1,4 +1,3 @@
-from aggregate import UniversityChair
 import matplotlib.pyplot as plt
 
 def plot_by_chair(chair_data):

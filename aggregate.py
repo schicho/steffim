@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 import concurrent.futures
 from fimparser import parse_chair_page, parse_chair_landingpage, parse_chair_team
 
@@ -64,3 +65,14 @@ def parse_chair(link):
 
     return chair
 
+def chair_data_to_json(chair_data):
+    data = []
+    for chair in chair_data:
+        data.append({
+            'chair_name': chair.name,
+            'stef_count': len(chair._stef),
+            'stef_list': chair._stef
+        })
+
+    json_data = f"{{'timestamp': '{datetime.now().timestamp()}', 'data': {data}}}"
+    return json_data
