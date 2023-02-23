@@ -2,7 +2,7 @@ import fimparser
 
 def main():
     # open the chairs.html file
-    with open('chairs.html') as f:
+    with open('htmls/chairs.html') as f:
         # read the file
         html = f.read()
         # parse the html
@@ -21,5 +21,5 @@ def parse_landingpage(filename):
 
 if __name__ == '__main__':
     main()
-    parse_landingpage('dke.html')
-    parse_landingpage('tech.html')
+    parse_landingpage('htmls/landing-dke.html')
+    parse_landingpage('htmls/landing-tech.html')
