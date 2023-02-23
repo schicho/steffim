@@ -10,5 +10,16 @@ def main():
         # print the links
         print(links)
 
+def parse_landingpage(filename):
+    with open(filename) as f:
+        # read the file
+        html = f.read()
+        # parse the html
+        name, link = fimparser.parse_chair_landingpage(html)
+        # print the name and link
+        print(name, link)
+
 if __name__ == '__main__':
     main()
+    parse_landingpage('dke.html')
+    parse_landingpage('tech.html')

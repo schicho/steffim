@@ -19,3 +19,31 @@ def parse_chair_page(chair_page):
             linksToChairs.append(linkToChair)
 
     return linksToChairs
+
+'''
+This function parses the landing page of a chair.
+It finds the name of the chair and the link to the chair's team page.
+
+The parsing is absolutely hacky, but it works (currently).
+The name is found in the first <h1> tag of the page.
+
+The link to the chair's team page is found by looking for the first occurence of the text "team" in a link.
+This must be done this way as each chair has a different link to their team page. e.g. "Lehrstuhlteam" or "Team".
+'''
+def parse_chair_landingpage(chair_landingpage):
+    soup = BeautifulSoup(chair_landingpage, 'html.parser')
+    
+    # the chair name is in the <h1> tag
+    chairName = soup.find('h1').text
+
+    # find the link to the chair's team page
+    # the link can be found by looking for the first occurence of the text "team"
+    # yes, this is an extreme hack, but it works
+
+    linkToTeam = None
+    for link in soup.find_all('a'):
+        if link.text.lower().find('team') != -1:
+            linkToTeam = link.get('href')
+            break
+
+    return chairName, linkToTeam
