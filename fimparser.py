@@ -14,7 +14,8 @@ It finds the links to the chairs and their names as tuples.
 def parse_chair_page(chair_page):
     soup = BeautifulSoup(chair_page, 'html.parser')
     
-    linksToChairs = []
+    # tuples of (link, name)
+    chairWithLink = []
 
     # the links to the chairs are in a table
     # unfortunately, the table does not have a disctinctive class or id
@@ -33,9 +34,9 @@ def parse_chair_page(chair_page):
             # the link may be relative, so we need to add the prefix
             linkToChair = _convert_to_full_url(linkToChair)
 
-            linksToChairs.append((linkToChair, chairName))
+            chairWithLink.append((linkToChair, chairName))
 
-    return linksToChairs
+    return chairWithLink
 
 '''
 This function parses the landing page of a chair.
