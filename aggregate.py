@@ -13,7 +13,7 @@ class UniversityChair:
     def add_team_member(self, member: str):
         self._team.append(member)
 
-        if member.lower().find('stef') > -1:
+        if member.lower().find('stef') > -1 or member.lower().find('steph') > -1:
             self._stef.append(member)
 
     def __str__(self):
