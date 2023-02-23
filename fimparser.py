@@ -47,3 +47,28 @@ def parse_chair_landingpage(chair_landingpage):
             break
 
     return chairName, linkToTeam
+
+'''
+This function parses the chair team page.
+It finds the names of the chair team members.
+'''
+def parse_chair_team(chair_team_page):
+    soup = BeautifulSoup(chair_team_page, 'html.parser')
+
+    memberNames = []
+
+    # the chair team members are in multiple tables
+    # the tables cannot be simply found by their class or id
+    # as such, we find the all tables in the <main> tag and look at all the links in the tables
+    #
+    # the links are the chair team members and their email addresses
+    # we are only interested in the links that do not start with "mailto:"
+    #
+    # from the <a> we can get the names of the chair team members
+
+    for table in soup.find('main').find_all('table'):
+        for link in table.find_all('a'):
+            if link.get('href').find('mailto:') == -1:
+                memberNames.append(link.text)
+
+    return memberNames
