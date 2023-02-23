@@ -6,12 +6,12 @@ def plot_by_chair(chair_data):
 
 def _plot_by_chair(chair_data):
     fig, ax = plt.subplots(figsize=(10, 10), constrained_layout=True)
+    fig.set_figwidth(8)
+    fig.set_figheight(5)
 
     plt.xticks(rotation=90)
 
     ax.set_title('Stef by Chair')
-    ax.set_xlabel('Chair')
-    ax.set_ylabel('Stef')
 
     # force integer y-axis
     ax.yaxis.get_major_locator().set_params(integer=True)
@@ -26,5 +26,4 @@ def _plot_by_chair(chair_data):
     rects = ax.bar(chair_names, stef_counts)
     ax.bar_label(rects, [f'{count}' for count in stef_counts], padding=-32, fontweight='bold')
     
-
-    plt.show()
+    fig.savefig('stef_by_chair.png')
