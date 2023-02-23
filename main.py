@@ -19,7 +19,17 @@ def parse_landingpage(filename):
         # print the name and link
         print(name, link)
 
+def parse_teamnames(filename):
+    with open(filename) as f:
+        # read the file
+        html = f.read()
+        # parse the html
+        names = fimparser.parse_chair_team(html)
+        # print the names
+        print(names)
+
 if __name__ == '__main__':
     main()
     parse_landingpage('htmls/landing-dke.html')
     parse_landingpage('htmls/landing-tech.html')
+    parse_teamnames('htmls/team-dbs.html')
