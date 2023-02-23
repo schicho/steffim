@@ -32,11 +32,11 @@ class UniversityChair:
 
 def get_chair_data():
     chair_data = []
-    chair_page = requests.get(CHAIR_OVERVIEW_URL).text
-    chair_links = parse_chair_page(chair_page)
+    chair_overview_page = requests.get(CHAIR_OVERVIEW_URL).text
+    chair_info = parse_chair_page(chair_overview_page)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-        future_to_link = {executor.submit(parse_chair, link): link for link in chair_links}
+        future_to_link = {executor.submit(parse_chair, link_name_touple): link_name_touple for link_name_touple in chair_info}
         for future in concurrent.futures.as_completed(future_to_link):
             link = future_to_link[future]
             try:
@@ -47,19 +47,19 @@ def get_chair_data():
 
     return chair_data
 
-def parse_chair(link):
-    print(f'Parsing chair: {link}')
+def parse_chair(link_name_touple):
+    print(f'Parsing chair: {link_name_touple[1]}')
 
-    chair_req = requests.get(link)
+    chair_req = requests.get(link_name_touple[0])
     if chair_req.status_code != 200:
         raise Exception(f'request was not successful: {chair_req.status_code}')
 
-    chair_name, chair_team_link = parse_chair_landingpage(chair_req.text)
+    chair_team_link = parse_chair_landingpage(chair_req.text)
 
     chair_team_page = requests.get(chair_team_link).text
     chair_team = parse_chair_team(chair_team_page)
 
-    chair = UniversityChair(chair_name)
+    chair = UniversityChair(link_name_touple[1])
     for member in chair_team:
         chair.add_team_member(member)
 

@@ -9,7 +9,7 @@ def _convert_to_full_url(url):
 
 '''
 This function parses the chair overview page.
-It finds the links to the chairs.
+It finds the links to the chairs and their names as tuples.
 '''
 def parse_chair_page(chair_page):
     soup = BeautifulSoup(chair_page, 'html.parser')
@@ -26,24 +26,23 @@ def parse_chair_page(chair_page):
         # see chairs.html line 1250...
         tdTags = trTag.find_all('td')
         if len(tdTags) > 1:
-            linkToChair = tdTags[1].find('a').get('href')
+            aLink = tdTags[1].find('a')
+            chairName = aLink.text
+            linkToChair = aLink.get('href')
 
             # the link may be relative, so we need to add the prefix
             linkToChair = _convert_to_full_url(linkToChair)
 
-            linksToChairs.append(linkToChair)
+            linksToChairs.append((linkToChair, chairName))
 
     return linksToChairs
 
 '''
 This function parses the landing page of a chair.
-It finds the name of the chair and the link to the chair's team page.
+It finds the link to the chair's team page.
 '''
 def parse_chair_landingpage(chair_landingpage):
     soup = BeautifulSoup(chair_landingpage, 'html.parser')
-    
-    # the chair name is in the <h1> tag
-    chairName = soup.find('h1').text
 
     # find the link to the chair's team page
     # the link can be found by looking for the first occurence of the text "team"
@@ -59,7 +58,7 @@ def parse_chair_landingpage(chair_landingpage):
     if linkToTeam is None:
         raise Exception('Failed to find link to team page')
 
-    return chairName, _convert_to_full_url(linkToTeam)
+    return _convert_to_full_url(linkToTeam)
 
 '''
 This function parses the chair team page.
