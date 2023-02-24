@@ -2,6 +2,7 @@ import requests
 import json
 from datetime import datetime
 import concurrent.futures
+import logging
 from fimparser import parse_chair_page, parse_chair_landingpage, parse_chair_team
 
 CHAIR_OVERVIEW_URL = 'https://www.fim.uni-passau.de/forschung-und-professuren/lehrstuehle-professuren-und-fachgebiete'
@@ -34,6 +35,7 @@ class UniversityChair:
 
 
 def get_chair_data():
+    logging.debug('Parsing chair overview page')
     chair_data = []
     chair_overview_page = requests.get(CHAIR_OVERVIEW_URL).text
     chair_info = parse_chair_page(chair_overview_page)
@@ -47,13 +49,13 @@ def get_chair_data():
                 chair = future.result()
                 chair_data.append(chair)
             except Exception as e:
-                print(f'Failed to parse chair: {link}: {e}')
+                logging.warning(f'Failed to parse chair {link}: {e}')
 
     return chair_data
 
 
 def parse_chair(chairWithLink):
-    print(f'Parsing chair: {chairWithLink[1]}')
+    logging.debug(f'Parsing chair: {chairWithLink[1]}')
 
     chair_req = requests.get(chairWithLink[0])
     if chair_req.status_code != 200:
