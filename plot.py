@@ -31,7 +31,7 @@ def _plot_by_chair(chair_data):
     ax.bar_label(rects, [f'{count}' for count in stef_counts],
                  padding=-32, fontweight='bold')
 
-    fig.savefig('stef_by_chair.svg')
+    fig.savefig('generated/stef_by_chair.svg')
 
 
 def plot_over_time():
@@ -41,7 +41,7 @@ def plot_over_time():
 
     plt.xticks(rotation=90)
 
-    ax.set_title('Stef over Time')
+    ax.set_title('#Stef Over Time')
 
     # force integer axis
     ax.yaxis.get_major_locator().set_params(integer=True)
@@ -73,4 +73,4 @@ def plot_over_time():
         yData.append(stef_count)
 
     ax.plot(xData, yData)
-    fig.savefig('stef_over_time.svg')
+    fig.savefig('generated/stef_over_time.svg')
