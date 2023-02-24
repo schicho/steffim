@@ -26,4 +26,4 @@ def _plot_by_chair(chair_data):
     rects = ax.bar(chair_names, stef_counts)
     ax.bar_label(rects, [f'{count}' for count in stef_counts], padding=-32, fontweight='bold')
     
-    fig.savefig('stef_by_chair.png')
+    fig.savefig('stef_by_chair.svg')
