@@ -9,3 +9,5 @@ if __name__ == '__main__':
         f.write(aggregate.chair_data_to_json(chair_data))
 
     plot.plot_by_chair(chair_data)
+
+    plot.plot_over_time()
