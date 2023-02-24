@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
-import os, json
+import os
+import json
 from datetime import datetime
+
 
 def plot_by_chair(chair_data):
     _plot_by_chair(chair_data)
@@ -26,9 +28,11 @@ def _plot_by_chair(chair_data):
     stef_counts = [len(chair._stef) for chair in chair_data]
 
     rects = ax.bar(chair_names, stef_counts)
-    ax.bar_label(rects, [f'{count}' for count in stef_counts], padding=-32, fontweight='bold')
-    
+    ax.bar_label(rects, [f'{count}' for count in stef_counts],
+                 padding=-32, fontweight='bold')
+
     fig.savefig('stef_by_chair.svg')
+
 
 def plot_over_time():
     fig, ax = plt.subplots(figsize=(10, 10), constrained_layout=True)
@@ -67,6 +71,6 @@ def plot_over_time():
             stef_count += len(chair['stef_list'])
 
         yData.append(stef_count)
-    
+
     ax.plot(xData, yData)
     fig.savefig('stef_over_time.svg')

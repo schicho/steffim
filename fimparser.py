@@ -2,18 +2,22 @@ from bs4 import BeautifulSoup
 
 FIM_URL_PREFIX = 'https://www.fim.uni-passau.de'
 
+
 def _convert_to_full_url(url):
     if not url.startswith('http'):
         return FIM_URL_PREFIX + url
     return url
 
+
 '''
 This function parses the chair overview page.
 It finds the links to the chairs and their names as tuples.
 '''
+
+
 def parse_chair_page(chair_page):
     soup = BeautifulSoup(chair_page, 'html.parser')
-    
+
     # tuples of (link, name)
     chairWithLink = []
 
@@ -38,10 +42,13 @@ def parse_chair_page(chair_page):
 
     return chairWithLink
 
+
 '''
 This function parses the landing page of a chair.
 It finds the link to the chair's team page.
 '''
+
+
 def parse_chair_landingpage(chair_landingpage):
     soup = BeautifulSoup(chair_landingpage, 'html.parser')
 
@@ -55,16 +62,19 @@ def parse_chair_landingpage(chair_landingpage):
         if link.text.lower().find('team') != -1:
             linkToTeam = link.get('href')
             break
-    
+
     if linkToTeam is None:
         raise Exception('Failed to find link to team page')
 
     return _convert_to_full_url(linkToTeam)
 
+
 '''
 This function parses the chair team page.
 It finds the names of the chair team members.
 '''
+
+
 def parse_chair_team(chair_team_page):
     soup = BeautifulSoup(chair_team_page, 'html.parser')
 

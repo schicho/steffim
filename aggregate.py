@@ -6,6 +6,7 @@ from fimparser import parse_chair_page, parse_chair_landingpage, parse_chair_tea
 
 CHAIR_OVERVIEW_URL = 'https://www.fim.uni-passau.de/forschung-und-professuren/lehrstuehle-professuren-und-fachgebiete'
 
+
 class UniversityChair:
     def __init__(self, name):
         self.name = name
@@ -20,16 +21,17 @@ class UniversityChair:
 
     def __str__(self):
         return f'{self.name} has {len(self._team)} team members, ' \
-                f'including {len(self._stef)} Stef(s): {self._stef}'
-    
+            f'including {len(self._stef)} Stef(s): {self._stef}'
+
     def __repr__(self):
         return self.__str__()
-    
+
     def stef_stats(self):
         return (self.name, len(self._stef))
 
     def stef_list(self):
         return self._stef.copy()
+
 
 def get_chair_data():
     chair_data = []
@@ -37,7 +39,8 @@ def get_chair_data():
     chair_info = parse_chair_page(chair_overview_page)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-        future_to_link = {executor.submit(parse_chair, chairWithLink): chairWithLink for chairWithLink in chair_info}
+        future_to_link = {executor.submit(
+            parse_chair, chairWithLink): chairWithLink for chairWithLink in chair_info}
         for future in concurrent.futures.as_completed(future_to_link):
             link = future_to_link[future]
             try:
@@ -47,6 +50,7 @@ def get_chair_data():
                 print(f'Failed to parse chair: {link}: {e}')
 
     return chair_data
+
 
 def parse_chair(chairWithLink):
     print(f'Parsing chair: {chairWithLink[1]}')
@@ -65,6 +69,7 @@ def parse_chair(chairWithLink):
         chair.add_team_member(member)
 
     return chair
+
 
 def chair_data_to_json(chair_data):
     data = []
