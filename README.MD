@@ -6,7 +6,7 @@ Started as a joke, when both a friend of mine and I noticed we have a lot of 'St
 
 ## How does it work?
 
-A script is run daily on github actions.
+A script is run monthly on github actions.
 It crawls the FIM chair overview page and finds the public list of employees for each chair.
 It then counts the number of employees with a name starting with 'Stef' or 'Steph' and generates both a graph over time and a chair ranking.
 
