@@ -1,8 +1,6 @@
 name: Generate Steffim Stats
 
 on:
-  push:
-    branches: [ master ]
   schedule:
     - cron: "5 0 1 * *"
   workflow_dispatch:
