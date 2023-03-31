@@ -5,7 +5,7 @@ import logging
 import os
 
 if __name__ == '__main__':
-    logging.basicConfig(format='%(asctime)s %(levelname)s: %(message)s')
+    logging.basicConfig(format='%(asctime)s %(levelname)s [%(filename)s %(lineno)d]: %(message)s')
 
     try:
         chair_data = aggregate.get_chair_data()

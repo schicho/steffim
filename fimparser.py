@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import logging
 
 FIM_URL_PREFIX = 'https://www.fim.uni-passau.de'
 
@@ -16,6 +17,7 @@ It finds the links to the chairs and their names as tuples.
 
 
 def parse_chair_page(chair_page):
+    logging.debug('Parsing chair overview page')
     soup = BeautifulSoup(chair_page, 'html.parser')
 
     # tuples of (link, name)
@@ -32,6 +34,11 @@ def parse_chair_page(chair_page):
         tdTags = trTag.find_all('td')
         if len(tdTags) > 1:
             aLink = tdTags[1].find('a')
+
+            if (aLink is None):
+                # the chair has no dedicated page, so we skip it
+                continue
+
             chairName = aLink.text
             linkToChair = aLink.get('href')
 

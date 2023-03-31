@@ -35,10 +35,14 @@ class UniversityChair:
 
 
 def get_chair_data():
-    logging.debug('Parsing chair overview page')
+    logging.debug('Getting chair overview page')
     chair_data = []
-    chair_overview_page = requests.get(CHAIR_OVERVIEW_URL).text
-    chair_info = parse_chair_page(chair_overview_page)
+    resp = requests.get(CHAIR_OVERVIEW_URL)
+    if resp.status_code != 200:
+        raise Exception(f'request was not successful: {resp.status_code}')
+    
+    chair_page_text = resp.text
+    chair_info = parse_chair_page(chair_page_text)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         future_to_link = {executor.submit(
