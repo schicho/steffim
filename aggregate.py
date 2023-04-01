@@ -78,12 +78,7 @@ def parse_chair(chairWithLink):
 
 
 def chair_data_to_json(chair_data):
-    data = []
-    for chair in chair_data:
-        data.append({
-            'chair_name': chair.name,
-            'stef_list': chair._stef
-        })
+    data = [{'chair_name': chair.name, 'stef_list': chair._stef} for chair in chair_data]
 
-    json_data = f'{{"timestamp": "{datetime.now().timestamp()}", "data": {json.dumps(data)}}}'
+    json_data = f'{{"timestamp": "{datetime.now().timestamp()}", "data": {json.dumps(data, indent=2)}}}'
     return json_data
