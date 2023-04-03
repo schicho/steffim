@@ -37,6 +37,7 @@ def parse_chair_overview(chair_page):
 
             if (aLink is None):
                 # the chair has no dedicated page, so we skip it
+                logging.warning(f'failed to find link: chair {tdTags[1].text} is listed, but has no dedicated page')
                 continue
 
             chair_name = aLink.text
