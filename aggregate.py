@@ -1,9 +1,9 @@
 import requests
 import json
 from datetime import datetime
-import concurrent.futures
 import logging
-from fimparser import parse_chair_page, parse_chair_landingpage, parse_chair_team
+from fimparser import parse_chair_overview, parse_individual_chair_landing, parse_individual_chair_team
+import aiohttp, asyncio
 
 CHAIR_OVERVIEW_URL = 'https://www.fim.uni-passau.de/forschung-und-professuren/lehrstuehle-professuren-und-fachgebiete'
 
@@ -34,48 +34,48 @@ class UniversityChair:
         return self._stef.copy()
 
 
-def get_chair_data():
-    logging.debug('Getting chair overview page')
-    chair_data = []
-    resp = requests.get(CHAIR_OVERVIEW_URL)
-    if resp.status_code != 200:
-        raise Exception(f'request was not successful: {resp.status_code}')
-    
-    chair_page_text = resp.text
-    chair_info = parse_chair_page(chair_page_text)
+async def get_chair_data():
+    logging.debug('getting chair overview page')
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-        future_to_link = {executor.submit(
-            parse_chair, chairWithLink): chairWithLink for chairWithLink in chair_info}
-        for future in concurrent.futures.as_completed(future_to_link):
-            link = future_to_link[future]
+    async with aiohttp.ClientSession() as session:
+        resp = await session.get(CHAIR_OVERVIEW_URL)
+        if resp.status != 200:
+            raise Exception(f'request to overview page was not successful: {resp.status}')
+
+        chair_page_text = await resp.text()
+        chair_info = parse_chair_overview(chair_page_text)
+
+        chair_data = []
+        tasks = [get_individual_chair(session, chair_link_tuple) for chair_link_tuple in chair_info]
+        for future in asyncio.as_completed(tasks):
             try:
-                chair = future.result()
+                chair = await future
                 chair_data.append(chair)
             except Exception as e:
-                logging.warning(f'Failed to parse chair {link}: {e}')
+                logging.warning(f'failed to parse chair: {e}')
 
     return chair_data
 
+async def get_individual_chair(session, chair_link_tuple):
+    logging.debug(f'getting chair: {chair_link_tuple[0]}')
 
-def parse_chair(chairWithLink):
-    logging.debug(f'Parsing chair: {chairWithLink[1]}')
+    resp = await session.get(chair_link_tuple[1])
+    if resp.status != 200:
+        raise Exception(f'request for chair {chair_link_tuple[1]} was not successful: {resp.status}')
 
-    chair_req = requests.get(chairWithLink[0])
-    if chair_req.status_code != 200:
-        raise Exception(f'request was not successful: {chair_req.status_code}')
+    chair_team_link = parse_individual_chair_landing(chair_link_tuple, await resp.text())
 
-    chair_team_link = parse_chair_landingpage(chair_req.text)
+    resp = await session.get(chair_team_link)
+    if resp.status != 200:
+        raise Exception(f'request for teampage of chair {chair_link_tuple[0]} was not successful: {resp.status}')
+    
+    chair_team = parse_individual_chair_team(await resp.text())
 
-    chair_team_page = requests.get(chair_team_link).text
-    chair_team = parse_chair_team(chair_team_page)
-
-    chair = UniversityChair(chairWithLink[1])
+    chair = UniversityChair(chair_link_tuple[0])
     for member in chair_team:
         chair.add_team_member(member)
 
     return chair
-
 
 def chair_data_to_json(chair_data):
     data = [{'chair_name': chair.name, 'stef_list': chair._stef} for chair in chair_data]

@@ -16,12 +16,12 @@ It finds the links to the chairs and their names as tuples.
 '''
 
 
-def parse_chair_page(chair_page):
-    logging.debug('Parsing chair overview page')
+def parse_chair_overview(chair_page):
+    logging.debug('parsing chair overview page')
     soup = BeautifulSoup(chair_page, 'html.parser')
 
-    # tuples of (link, name)
-    chairWithLink = []
+    # tuples of (name, link)
+    chair_link_touple_list = []
 
     # the links to the chairs are in a table
     # unfortunately, the table does not have a disctinctive class or id
@@ -39,15 +39,15 @@ def parse_chair_page(chair_page):
                 # the chair has no dedicated page, so we skip it
                 continue
 
-            chairName = aLink.text
-            linkToChair = aLink.get('href')
+            chair_name = aLink.text
+            chair_link = aLink.get('href')
 
             # the link may be relative, so we need to add the prefix
-            linkToChair = _convert_to_full_url(linkToChair)
+            chair_link = _convert_to_full_url(chair_link)
 
-            chairWithLink.append((linkToChair, chairName))
+            chair_link_touple_list.append((chair_name, chair_link))
 
-    return chairWithLink
+    return chair_link_touple_list
 
 
 '''
@@ -56,7 +56,8 @@ It finds the link to the chair's team page.
 '''
 
 
-def parse_chair_landingpage(chair_landingpage):
+def parse_individual_chair_landing(chair_link_tuple, chair_landingpage):
+    logging.debug(f'parsing landingpage of chair {chair_link_tuple[0]}')
     soup = BeautifulSoup(chair_landingpage, 'html.parser')
 
     # find the link to the chair's team page
@@ -71,7 +72,7 @@ def parse_chair_landingpage(chair_landingpage):
             break
 
     if linkToTeam is None:
-        raise Exception('Failed to find link to team page')
+        raise Exception(f'failed to find link to team of chair {chair_link_tuple[0]}')
 
     return _convert_to_full_url(linkToTeam)
 
@@ -82,7 +83,7 @@ It finds the names of the chair team members.
 '''
 
 
-def parse_chair_team(chair_team_page):
+def parse_individual_chair_team(chair_team_page):
     soup = BeautifulSoup(chair_team_page, 'html.parser')
 
     memberNames = []
