@@ -4,10 +4,34 @@ import logging
 FIM_URL_PREFIX = 'https://www.fim.uni-passau.de'
 
 
-def _convert_to_full_url(url):
-    if not url.startswith('http'):
-        return FIM_URL_PREFIX + url
-    return url
+def _convert_to_full_url(path_or_url):
+    if not path_or_url.startswith('http'):
+        return FIM_URL_PREFIX + path_or_url
+    return path_or_url
+
+'''
+This function creates a full url for the team page of a chair.
+The logic is a bit complicated, because a chair page may be hosted on the FIM server and the path_or_url is relative.
+Or the chair page is hosted on a different server and the path_or_url is relative as well.
+Or the path_or_url is already a full url.
+'''
+
+
+def _convert_to_full_team_url(path_or_url, link_to_chair):
+    # The chair page is hosted on the FIM site and the path_or_url to the team page is relative.
+    # So we need to concatenate with the FIM_URL_PREFIX.
+    if link_to_chair.startswith(FIM_URL_PREFIX):
+        return FIM_URL_PREFIX + path_or_url
+
+    # a full url is already used in the html
+    if path_or_url.startswith('http'):
+        return path_or_url
+
+    # the path_or_url is relative, but the chair page is not hosted on the FIM server
+    # so we need to concatenate with the link_to_chair
+    if not path_or_url.startswith('http'):
+        return link_to_chair + path_or_url
+    return path_or_url
 
 
 '''
@@ -75,7 +99,7 @@ def parse_individual_chair_landing(chair_link_tuple, chair_landingpage):
     if linkToTeam is None:
         raise Exception(f'failed to find link to team of chair {chair_link_tuple[0]}')
 
-    return _convert_to_full_url(linkToTeam)
+    return _convert_to_full_team_url(linkToTeam, chair_link_tuple[1])
 
 
 '''

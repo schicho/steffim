@@ -61,13 +61,13 @@ async def get_individual_chair(session, chair_link_tuple):
 
     resp = await session.get(chair_link_tuple[1])
     if resp.status != 200:
-        raise Exception(f'request for chair {chair_link_tuple[1]} was not successful: {resp.status}')
+        raise Exception(f'request for chair {chair_link_tuple[1]} was not successful: {resp.status}. link: {chair_link_tuple[1]}')
 
     chair_team_link = parse_individual_chair_landing(chair_link_tuple, await resp.text())
 
     resp = await session.get(chair_team_link)
     if resp.status != 200:
-        raise Exception(f'request for teampage of chair {chair_link_tuple[0]} was not successful: {resp.status}')
+        raise Exception(f'request for teampage of chair {chair_link_tuple[0]} was not successful: {resp.status}. link: {chair_team_link}')
     
     chair_team = parse_individual_chair_team(await resp.text())
 
