@@ -27,6 +27,9 @@ def _plot_by_chair(chair_data):
     chair_names = [chair.name for chair in chair_data]
     stef_counts = [len(chair._stef) for chair in chair_data]
 
+    # sort by stef count and then by name
+    chair_names, stef_counts = zip(*sorted(zip(chair_names, stef_counts), key=lambda x: (x[1], x[0])))
+
     rects = ax.bar(chair_names, stef_counts)
     ax.bar_label(rects, [f'{count}' for count in stef_counts],
                  padding=-32, fontweight='bold')
