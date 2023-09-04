@@ -24,11 +24,11 @@ def _plot_by_chair(chair_data):
     # leave out empty chairs
     chair_data = [chair for chair in chair_data if len(chair._stef) > 0]
 
-    chair_names = [chair.name for chair in chair_data]
-    stef_counts = [len(chair._stef) for chair in chair_data]
+    # list of tuples (chair_name, stef_count)
+    chair_and_stef_count = [(chair.name, len(chair._stef)) for chair in chair_data]
 
     # sort by stef count and then by name
-    chair_names, stef_counts = zip(*sorted(zip(chair_names, stef_counts), key=lambda x: (x[1], x[0])))
+    chair_names, stef_counts = zip(*sorted(chair_and_stef_count, key=lambda x: (x[1], x[0])))
 
     rects = ax.bar(chair_names, stef_counts)
     ax.bar_label(rects, [f'{count}' for count in stef_counts],
