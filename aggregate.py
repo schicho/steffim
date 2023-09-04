@@ -69,7 +69,11 @@ async def get_individual_chair(session, chair_link_tuple):
     if resp.status != 200:
         raise Exception(f'request for teampage of chair {chair_link_tuple[0]} was not successful: {resp.status}. link: {chair_team_link}')
     
-    chair_team = parse_individual_chair_team(await resp.text())
+    # add context of chair to exception
+    try:
+        chair_team = parse_individual_chair_team(await resp.text())
+    except Exception as e:
+        raise Exception(f'{e} for chair {chair_link_tuple[0]}')
 
     chair = UniversityChair(chair_link_tuple[0])
     for member in chair_team:

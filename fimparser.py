@@ -122,9 +122,12 @@ def parse_individual_chair_team(chair_team_page):
     #
     # from the <a> we can get the names of the chair team members
 
-    for table in soup.find('main').find_all('table'):
-        for link in table.find_all('a'):
-            if link.get('href').find('mailto:') == -1:
-                memberNames.append(link.text)
-
+    try:
+        for table in soup.find('main').find_all('table'):
+            for link in table.find_all('a'):
+                if link.get('href').find('mailto:') == -1:
+                    memberNames.append(link.text)
+    except Exception as e:
+        raise Exception(f'did not find any table with team members')
+    
     return memberNames
