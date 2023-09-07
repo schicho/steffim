@@ -5,7 +5,8 @@ from datetime import datetime
 
 
 def plot_by_chair(chair_data):
-    _plot_by_chair(chair_data)
+    with plt.style.context('seaborn'):
+        _plot_by_chair(chair_data)
 
 
 def _plot_by_chair(chair_data):
@@ -36,8 +37,11 @@ def _plot_by_chair(chair_data):
 
     fig.savefig('generated/stef_by_chair.svg')
 
-
 def plot_over_time():
+    with plt.style.context('seaborn'):
+        _plot_over_time()
+
+def _plot_over_time():
     fig, ax = plt.subplots(figsize=(10, 10), constrained_layout=True)
     fig.set_figwidth(8)
     fig.set_figheight(5)
