@@ -18,4 +18,4 @@ if __name__ == '__main__':
         asyncio.run(main())
     except Exception as e:
         logging.error(f'process failed: {e}')
-        os._exit(1)
+        exit(1)
