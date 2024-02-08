@@ -1,20 +1,22 @@
-from bs4 import BeautifulSoup
 import logging
 
-FIM_URL_PREFIX = 'https://www.fim.uni-passau.de'
+from bs4 import BeautifulSoup
+
+FIM_URL_PREFIX = "https://www.fim.uni-passau.de"
 
 
 def _convert_to_full_url(path_or_url):
-    if not path_or_url.startswith('http'):
+    if not path_or_url.startswith("http"):
         return FIM_URL_PREFIX + path_or_url
     return path_or_url
 
-'''
+
+"""
 This function creates a full url for the team page of a chair.
 The logic is a bit complicated, because a chair page may be hosted on the FIM server and the path_or_url is relative.
 Or the chair page is hosted on a different server and the path_or_url is relative as well.
 Or the path_or_url is already a full url.
-'''
+"""
 
 
 def _convert_to_full_team_url(path_or_url, link_to_chair):
@@ -24,25 +26,25 @@ def _convert_to_full_team_url(path_or_url, link_to_chair):
         return FIM_URL_PREFIX + path_or_url
 
     # a full url is already used in the html
-    if path_or_url.startswith('http'):
+    if path_or_url.startswith("http"):
         return path_or_url
 
     # the path_or_url is relative, but the chair page is not hosted on the FIM server
     # so we need to concatenate with the link_to_chair
-    if not path_or_url.startswith('http'):
+    if not path_or_url.startswith("http"):
         return link_to_chair + path_or_url
     return path_or_url
 
 
-'''
+"""
 This function parses the chair overview page.
 It finds the links to the chairs and their names as tuples.
-'''
+"""
 
 
 def parse_chair_overview(chair_page):
-    logging.debug('parsing chair overview page')
-    soup = BeautifulSoup(chair_page, 'html.parser')
+    logging.debug("parsing chair overview page")
+    soup = BeautifulSoup(chair_page, "html.parser")
 
     # tuples of (name, link)
     chair_link_touple_list = []
@@ -51,21 +53,23 @@ def parse_chair_overview(chair_page):
     # unfortunately, the table does not have a disctinctive class or id
     # however, the table is inside the <main> tag and each chair can be found in a <tr> and <td> tag
 
-    trTags = soup.find('main').find_all('tr')
+    trTags = soup.find("main").find_all("tr")
     for trTag in trTags:
         # the link to the chair is in the second <td> tag
         # see chairs.html line 1250...
-        tdTags = trTag.find_all('td')
+        tdTags = trTag.find_all("td")
         if len(tdTags) > 1:
-            aLink = tdTags[1].find('a')
+            aLink = tdTags[1].find("a")
 
-            if (aLink is None):
+            if aLink is None:
                 # the chair has no dedicated page, so we skip it
-                logging.warning(f'failed to find link: chair {tdTags[1].text} is listed, but has no dedicated page')
+                logging.warning(
+                    f"failed to find link: chair {tdTags[1].text} is listed, but has no dedicated page"
+                )
                 continue
 
             chair_name = aLink.text
-            chair_link = aLink.get('href')
+            chair_link = aLink.get("href")
 
             # the link may be relative, so we need to add the prefix
             chair_link = _convert_to_full_url(chair_link)
@@ -75,15 +79,15 @@ def parse_chair_overview(chair_page):
     return chair_link_touple_list
 
 
-'''
+"""
 This function parses the landing page of a chair.
 It finds the link to the chair's team page.
-'''
+"""
 
 
 def parse_individual_chair_landing(chair_link_tuple, chair_landingpage):
-    logging.debug(f'parsing landingpage of chair {chair_link_tuple[0]}')
-    soup = BeautifulSoup(chair_landingpage, 'html.parser')
+    logging.debug(f"parsing landingpage of chair {chair_link_tuple[0]}")
+    soup = BeautifulSoup(chair_landingpage, "html.parser")
 
     # find the link to the chair's team page
     # the link can be found by looking for the first occurence of the text "team"
@@ -91,25 +95,25 @@ def parse_individual_chair_landing(chair_link_tuple, chair_landingpage):
     # yes, this is an extreme hack, but it works
 
     linkToTeam = None
-    for link in soup.find_all('a'):
-        if link.text.lower().find('team') != -1:
-            linkToTeam = link.get('href')
+    for link in soup.find_all("a"):
+        if link.text.lower().find("team") != -1:
+            linkToTeam = link.get("href")
             break
 
     if linkToTeam is None:
-        raise Exception(f'failed to find link to team of chair {chair_link_tuple[0]}')
+        raise Exception(f"failed to find link to team of chair {chair_link_tuple[0]}")
 
     return _convert_to_full_team_url(linkToTeam, chair_link_tuple[1])
 
 
-'''
+"""
 This function parses the chair team page.
 It finds the names of the chair team members.
-'''
+"""
 
 
 def parse_individual_chair_team(chair_team_page):
-    soup = BeautifulSoup(chair_team_page, 'html.parser')
+    soup = BeautifulSoup(chair_team_page, "html.parser")
 
     memberNames = []
 
@@ -123,11 +127,11 @@ def parse_individual_chair_team(chair_team_page):
     # from the <a> we can get the names of the chair team members
 
     try:
-        for table in soup.find('main').find_all('table'):
-            for link in table.find_all('a'):
-                if link.get('href').find('mailto:') == -1:
+        for table in soup.find("main").find_all("table"):
+            for link in table.find_all("a"):
+                if link.get("href").find("mailto:") == -1:
                     memberNames.append(link.text)
-    except Exception as e:
-        raise Exception(f'did not find any table with team members')
-    
+    except Exception:
+        raise Exception("did not find any table with team members")
+
     return memberNames
