@@ -9,35 +9,30 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  generate_plots:
     runs-on: ubuntu-latest
 
     steps:
-    # Check out repository under $GITHUB_WORKSPACE, so the job can access it
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
-    # Run using Python 3.8
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.8'
+        python-version: '3.10'
         architecture: 'x64'
         cache: 'pip'
 
-    # Install dependencies with `pip`
     - name: Install requirements
       run: |
-        python3 -m pip install --upgrade pip setuptools wheel
         python3 -m pip install -r requirements.txt
-    # Generate all statistics images
-    - name: Generate images
+
+    - name: Generate SVGs
       run: |
         python3 main.py
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    # Commit all changed files to the repository
     - name: Commit to the repo
       run: |
         git config --global user.name "schicho/steffim"
