@@ -29,9 +29,6 @@ jobs:
     - name: Generate SVGs
       run: |
         python3 main.py
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Commit to the repo
       run: |
