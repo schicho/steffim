@@ -4,9 +4,11 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 
+STEFFIM_PLOT_STYLE = "seaborn-v0_8-darkgrid"
+
 
 def plot_by_chair(chair_data):
-    with plt.style.context("seaborn"):
+    with plt.style.context(STEFFIM_PLOT_STYLE):
         _plot_by_chair(chair_data)
 
 
@@ -43,7 +45,7 @@ def _plot_by_chair(chair_data):
 
 
 def plot_over_time():
-    with plt.style.context("seaborn"):
+    with plt.style.context(STEFFIM_PLOT_STYLE):
         _plot_over_time()
 
 
