@@ -53,6 +53,10 @@ def parse_chair_overview(chair_page):
     # unfortunately, the table does not have a disctinctive class or id
     # however, the table is inside the <main> tag and each chair can be found in a <tr> and <td> tag
 
+    table = soup.find("main").find("table")
+    if table is None:
+        raise Exception("no table of chairs found in the overview page")
+
     trTags = soup.find("main").find_all("tr")
     for trTag in trTags:
         # the link to the chair is in the second <td> tag
@@ -126,8 +130,16 @@ def parse_individual_chair_team(chair_team_page):
     #
     # from the <a> we can get the names of the chair team members
 
+    tables = []
     try:
-        for table in soup.find("main").find_all("table"):
+        tables = soup.find("main").find_all("table")
+    except Exception:
+        pass
+    if tables is None or len(tables) == 0:
+        raise Exception("no team member tables (reason is likely the new layout)")
+
+    try:
+        for table in tables:
             for link in table.find_all("a"):
                 if link.get("href").find("mailto:") == -1:
                     memberNames.append(link.text)
