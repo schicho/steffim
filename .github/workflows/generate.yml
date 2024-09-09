@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  generate_plots:
+  aggregate:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,15 +26,46 @@ jobs:
       run: |
         python3 -m pip install -r requirements.txt
 
-    - name: Generate SVGs
+    - name: Download and aggregate steffim stats
       run: |
-        python3 main.py
+        python3 main.py aggregate
 
-    - name: Commit to the repo
+    - name: Commit json to the repo
       run: |
         git config --global user.name "schicho/steffim"
         git config --global user.email "steffim[bot]@schicho.github.io"
         git add .
         # Force the build to succeed, even if no files were changed
-        git commit -m 'Update generated files' || true
+        git commit -m 'Add historic data for the month' || true
+        git push
+
+  plot:
+    needs: aggregate
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        architecture: 'x64'
+        cache: 'pip'
+
+    - name: Install requirements
+      run: |
+        python3 -m pip install -r requirements.txt
+
+    - name: Generate steffim plots
+      run: |
+        python3 main.py plot
+
+    - name: Commit svgs to the repo
+      run: |
+        git config --global user.name "schicho/steffim"
+        git config --global user.email "steffim[bot]@schicho.github.io"
+        git add .
+        # Force the build to succeed, even if no files were changed
+        git commit -m 'Update plots' || true
         git push

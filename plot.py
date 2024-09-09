@@ -7,29 +7,37 @@ import matplotlib.pyplot as plt
 STEFFIM_PLOT_STYLE = "seaborn-v0_8-darkgrid"
 
 
-def plot_by_chair(chair_data):
+def plot_by_chair():
     with plt.style.context(STEFFIM_PLOT_STYLE):
-        _plot_by_chair(chair_data)
+        _plot_by_chair()
 
 
-def _plot_by_chair(chair_data):
+def _plot_by_chair():
     fig, ax = plt.subplots(figsize=(10, 10), constrained_layout=True)
     fig.set_figwidth(8)
     fig.set_figheight(5)
 
     plt.xticks(rotation=90)
 
-    ax.set_title("Stef by Chair")
+    ax.set_title("#Stef by Chair")
 
     # force integer y-axis
     ax.yaxis.get_major_locator().set_params(integer=True)
     ax.xaxis.get_major_locator().set_params(integer=True)
 
+    # get latest historic file
+    historic_files = [f for f in os.listdir("historic") if f.endswith(".json")]
+    historic_files.sort()
+    with open(f"historic/{historic_files[-1]}", "r") as f:
+        chair_json = json.load(f)
+
     # leave out empty chairs
-    chair_data = [chair for chair in chair_data if len(chair._stef) > 0]
+    chair_data = [chair for chair in chair_json["data"] if len(chair["stef_list"]) > 0]
 
     # list of tuples (chair_name, stef_count)
-    chair_and_stef_count = [(chair.name, len(chair._stef)) for chair in chair_data]
+    chair_and_stef_count = [
+        (chair["chair_name"], len(chair["stef_list"])) for chair in chair_data
+    ]
 
     # sort by stef count and then by name
     chair_names, stef_counts = zip(
