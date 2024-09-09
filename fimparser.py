@@ -83,67 +83,108 @@ def parse_chair_overview(chair_page):
     return chair_link_touple_list
 
 
-"""
-This function parses the landing page of a chair.
-It finds the link to the chair's team page.
-"""
+class ChairParser:
+    def __init__(self, chair_name):
+        self.chair_name = chair_name
 
+    """
+    Parses the landing page of a chair.
+    Returns the link to the team page of the chair.
+    """
 
-def parse_individual_chair_landing(chair_link_tuple, chair_landingpage):
-    logging.debug(f"parsing landingpage of chair {chair_link_tuple[0]}")
-    soup = BeautifulSoup(chair_landingpage, "html.parser")
+    def parse_landing_page(self, chair_link, chair_landing_page):
+        soup = BeautifulSoup(chair_landing_page, "html.parser")
 
-    # find the link to the chair's team page
-    # the link can be found by looking for the first occurence of the text "team"
-    # as the links can have different style, e.g. "Lehrstuhlteam" or "Team"
-    # yes, this is an extreme hack, but it works
+        # find the link to the chair's team page
+        # the link can be found by looking for the first occurence of the text "team"
+        # as the links can have different style, e.g. "Lehrstuhlteam" or "Team"
+        # yes, this is an extreme hack, but it works
 
-    linkToTeam = None
-    for link in soup.find_all("a"):
-        if link.text.lower().find("team") != -1:
-            linkToTeam = link.get("href")
-            break
+        link_to_team = None
+        for link in soup.find_all("a"):
+            if link.text.lower().find("team") != -1:
+                link_to_team = link.get("href")
+                break
 
-    if linkToTeam is None:
-        raise Exception(f"failed to find link to team of chair {chair_link_tuple[0]}")
+        if link_to_team is None:
+            raise Exception(f"{self.chair_name}: failed to find link to team page")
 
-    return _convert_to_full_team_url(linkToTeam, chair_link_tuple[1])
+        return _convert_to_full_team_url(link_to_team, chair_link)
 
+    """
+    Parses the team page of a chair.
+    Selects the correct parsing method based on the layout of the team page.
+    """
 
-"""
-This function parses the chair team page.
-It finds the names of the chair team members.
-"""
+    def parse_team_page(self, chair_team_page):
+        # the team page layout can be different for each chair
+        # select the correct parsing method based on the HTML tags and CSS classes used.
 
+        if chair_team_page.find("table") != -1:
+            return self.parse_table_layout_team_page(chair_team_page)
+        else:
+            logging.warning(f"{self.chair_name}: no table found, using mailtos")
+            return self.parse_mailtos(chair_team_page)
 
-def parse_individual_chair_team(chair_team_page):
-    soup = BeautifulSoup(chair_team_page, "html.parser")
+    def parse_table_layout_team_page(self, chair_team_page):
+        soup = BeautifulSoup(chair_team_page, "html.parser")
 
-    memberNames = []
+        member_names = []
+        tables = []
 
-    # the chair team members are in multiple tables
-    # the tables cannot be simply found by their class or id
-    # as such, we find the all tables in the <main> tag and look at all the links in the tables
-    #
-    # the links are the chair team members and their email addresses
-    # we are only interested in the links that do not start with "mailto:"
-    #
-    # from the <a> we can get the names of the chair team members
+        # the chair team members are in multiple tables
+        # the tables cannot be simply found by their class or id
+        # as such, we find the all tables in the <main> tag and look at all the links in the tables
+        #
+        # the links are the chair team members and their email addresses
+        # we are only interested in the links that do not start with "mailto:"
+        #
+        # from the <a> we can get the names of the chair team members
 
-    tables = []
-    try:
-        tables = soup.find("main").find_all("table")
-    except Exception:
-        pass
-    if tables is None or len(tables) == 0:
-        raise Exception("no team member tables (reason is likely the new layout)")
+        try:
+            tables = soup.find("main").find_all("table")
+        except Exception:
+            pass
+        if tables is None or len(tables) == 0:
+            raise Exception("did not find any tables with team members (table layout)")
 
-    try:
-        for table in tables:
-            for link in table.find_all("a"):
-                if link.get("href").find("mailto:") == -1:
-                    memberNames.append(link.text)
-    except Exception:
-        raise Exception("did not find any table with team members")
+        try:
+            for table in tables:
+                for link in table.find_all("a"):
+                    if link.get("href").find("mailto:") == -1:
+                        member_names.append(link.text)
+        except Exception:
+            raise Exception("did not find any table with team members (table layout)")
 
-    return memberNames
+        return member_names
+
+    """
+    Finds all member of staff in the chair team page by looking for mailto links.
+    The mailto links contain the names of staff members, which are extracted.
+    Invalid mailto links, i.e. containing html encoded tags for subject or body, are skipped.
+    
+    This methodology has the downside that student names are incorrectly extracted, as they only contain the last name.
+    Note that they are not filtered out.
+    """
+
+    def parse_mailtos(self, chair_team_page):
+        soup = BeautifulSoup(chair_team_page, "html.parser")
+
+        # some email addresses are listed multiple times
+        # using a set to avoid duplicates
+        member_names = set()
+        try:
+            mailtos = soup.select("a[href^=mailto]")
+
+            for mailto in mailtos:
+                name = mailto["href"].split(":")[1]
+                # skip email addresses that are not names
+                if name.startswith("?"):
+                    continue
+                name = name.split("@")[0].replace(".", " ").title()
+
+                member_names.add(name)
+        except Exception as e:
+            raise Exception(f"failed to extract mailtos: {e}")
+
+        return list(member_names)

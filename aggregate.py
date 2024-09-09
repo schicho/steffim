@@ -5,11 +5,7 @@ from datetime import datetime
 
 import aiohttp
 
-from fimparser import (
-    parse_chair_overview,
-    parse_individual_chair_landing,
-    parse_individual_chair_team,
-)
+from fimparser import parse_chair_overview, ChairParser
 
 CHAIR_OVERVIEW_URL = "https://www.fim.uni-passau.de/forschung-und-professuren/lehrstuehle-professuren-und-fachgebiete"
 
@@ -79,8 +75,10 @@ async def get_individual_chair(session, chair_link_tuple):
             f"request for chair {chair_link_tuple[1]} was not successful: {resp.status}. link: {chair_link_tuple[1]}"
         )
 
-    chair_team_link = parse_individual_chair_landing(
-        chair_link_tuple, await resp.text()
+    chair_parser = ChairParser(chair_link_tuple[0])
+
+    chair_team_link = chair_parser.parse_landing_page(
+        chair_link_tuple[1], await resp.text()
     )
 
     resp = await session.get(chair_team_link)
@@ -91,7 +89,7 @@ async def get_individual_chair(session, chair_link_tuple):
 
     # add context of chair to exception
     try:
-        chair_team = parse_individual_chair_team(await resp.text())
+        chair_team = chair_parser.parse_team_page(await resp.text())
     except Exception as e:
         raise Exception(f"{e} for chair {chair_link_tuple[0]}")
 
