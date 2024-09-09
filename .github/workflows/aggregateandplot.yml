@@ -1,4 +1,4 @@
-name: Generate Steffim Stats
+name: Aggregate and Plot Steffim Stats
 
 on:
   schedule:
@@ -41,31 +41,4 @@ jobs:
 
   plot:
     needs: aggregate
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-        architecture: 'x64'
-        cache: 'pip'
-
-    - name: Install requirements
-      run: |
-        python3 -m pip install -r requirements.txt
-
-    - name: Generate steffim plots
-      run: |
-        python3 main.py plot
-
-    - name: Commit svgs to the repo
-      run: |
-        git config --global user.name "schicho/steffim"
-        git config --global user.email "steffim[bot]@schicho.github.io"
-        git add .
-        # Force the build to succeed, even if no files were changed
-        git commit -m 'Update plots' || true
-        git push
+    uses: ./.github/workflows/plot.yml
