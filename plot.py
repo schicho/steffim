@@ -17,7 +17,7 @@ def _plot_by_chair():
     fig.set_figwidth(8)
     fig.set_figheight(5)
 
-    plt.xticks(rotation=90)
+    plt.setp(ax.get_xticklabels(), rotation=45, ha='right')
 
     ax.set_title("#Stef by Chair")
 
