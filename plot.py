@@ -4,7 +4,14 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 
-STEFFIM_PLOT_STYLE = "seaborn-v0_8-darkgrid"
+STEFFIM_PLOT_STYLE = [
+    "seaborn-v0_8-darkgrid",
+    {
+        "font.family": "monospace",
+        "font.size": 10,
+        "axes.prop_cycle": plt.cycler("color", ["#ff8800"]),
+    },
+]
 
 
 def plot_by_chair():
@@ -17,7 +24,7 @@ def _plot_by_chair():
     fig.set_figwidth(8)
     fig.set_figheight(5)
 
-    plt.setp(ax.get_xticklabels(), rotation=45, ha='right')
+    plt.setp(ax.get_xticklabels(), rotation=45, ha="right")
 
     ax.set_title("#Stef by Chair")
 
@@ -86,7 +93,7 @@ def _plot_over_time():
         # convert timestamp to datetime YYYY-MM-DD
         timestamp = datetime.fromtimestamp(float(historic["timestamp"]))
 
-        xData.append(timestamp.strftime("%Y-%m-%d"))
+        xData.append(timestamp.strftime("%b '%y"))
 
         # summarize stef count over all chairs
         stef_count = 0
