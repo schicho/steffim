@@ -3,6 +3,7 @@ import os
 from datetime import datetime
 
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator
 
 STEFFIM_PLOT_STYLE = [
     "seaborn-v0_8-darkgrid",
@@ -72,6 +73,9 @@ def _plot_over_time():
     plt.xticks(rotation=90)
 
     ax.set_title("#Stef Over Time")
+
+    # limit x ticks, may need to be increased as time goes on and the crawler still works
+    ax.xaxis.set_major_locator(MultipleLocator(2))
 
     # force integer axis
     ax.yaxis.get_major_locator().set_params(integer=True)
