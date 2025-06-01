@@ -107,7 +107,7 @@ class ChairParser:
                 break
 
         if link_to_team is None:
-            raise Exception(f"{self.chair_name}: failed to find link to team page")
+            raise Exception(f"{self.chair_name}: no link to team page found")
 
         return _convert_to_full_team_url(link_to_team, chair_link)
 
@@ -123,7 +123,7 @@ class ChairParser:
         if chair_team_page.find("table") != -1:
             return self.parse_table_layout_team_page(chair_team_page)
         else:
-            logging.warning(f"{self.chair_name}: no table found, using mailtos")
+            logging.warning(f"{self.chair_name}: no team member table found. using mailtos")
             return self.parse_mailtos(chair_team_page)
 
     def parse_table_layout_team_page(self, chair_team_page):

@@ -61,7 +61,7 @@ async def get_chair_data():
                 chair = await future
                 chair_data.append(chair)
             except Exception as e:
-                logging.warning(f"failed to parse chair: {e}")
+                logging.error(f"{e}. Failed to get data for chair")
 
     return chair_data
 
@@ -72,7 +72,7 @@ async def get_individual_chair(session, chair_link_tuple):
     resp = await session.get(chair_link_tuple[1])
     if resp.status != 200:
         raise Exception(
-            f"request for chair {chair_link_tuple[1]} was not successful: {resp.status}. link: {chair_link_tuple[1]}"
+            f"{chair_link_tuple[0]}: request to chair was not successful. response code: {resp.status}. link: {chair_link_tuple[1]}"
         )
 
     chair_parser = ChairParser(chair_link_tuple[0])
@@ -84,14 +84,14 @@ async def get_individual_chair(session, chair_link_tuple):
     resp = await session.get(chair_team_link)
     if resp.status != 200:
         raise Exception(
-            f"request for teampage of chair {chair_link_tuple[0]} was not successful: {resp.status}. link: {chair_team_link}"
+            f"{chair_link_tuple[0]} request to team page was not successful. response code: {resp.status}. link: {chair_team_link}"
         )
 
     # add context of chair to exception
     try:
         chair_team = chair_parser.parse_team_page(await resp.text())
     except Exception as e:
-        raise Exception(f"{e} for chair {chair_link_tuple[0]}")
+        raise Exception(f"{chair_link_tuple[0]}: {e}")
 
     chair = UniversityChair(chair_link_tuple[0])
     for member in chair_team:
