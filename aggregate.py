@@ -104,6 +104,7 @@ def chair_data_to_json(chair_data):
     data = [
         {"chair_name": chair.name, "stef_list": chair._stef} for chair in chair_data
     ]
+    data.sort(key=lambda chair: chair["chair_name"])
 
     json_data = f'{{"timestamp": "{datetime.now().timestamp()}", "data": {json.dumps(data, indent=2)}}}'
     return json_data
