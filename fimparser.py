@@ -102,7 +102,8 @@ class ChairParser:
 
         link_to_team = None
         for link in soup.find_all("a"):
-            if link.text.lower().find("team") != -1:
+            # hack out the event listeners with href "#". Currently only the chair AI Engineering is doing this...
+            if link.text.lower().find("team") != -1 and link.get("href") != "#":
                 link_to_team = link.get("href")
                 break
 
@@ -118,45 +119,11 @@ class ChairParser:
 
     def parse_team_page(self, chair_team_page):
         # the team page layout can be different for each chair
-        # select the correct parsing method based on the HTML tags and CSS classes used.
-
-        if chair_team_page.find("table") != -1:
-            return self.parse_table_layout_team_page(chair_team_page)
-        else:
-            logging.warning(f"{self.chair_name}: no team member table found. using mailtos")
-            return self.parse_mailtos(chair_team_page)
-
-    def parse_table_layout_team_page(self, chair_team_page):
-        soup = BeautifulSoup(chair_team_page, "html.parser")
-
-        member_names = []
-        tables = []
-
-        # the chair team members are in multiple tables
-        # the tables cannot be simply found by their class or id
-        # as such, we find the all tables in the <main> tag and look at all the links in the tables
         #
-        # the links are the chair team members and their email addresses
-        # we are only interested in the links that do not start with "mailto:"
-        #
-        # from the <a> we can get the names of the chair team members
-
-        try:
-            tables = soup.find("main").find_all("table")
-        except Exception:
-            pass
-        if tables is None or len(tables) == 0:
-            raise Exception("did not find any tables with team members (table layout)")
-
-        try:
-            for table in tables:
-                for link in table.find_all("a"):
-                    if link.get("href").find("mailto:") == -1:
-                        member_names.append(link.text)
-        except Exception:
-            raise Exception("did not find any table with team members (table layout)")
-
-        return member_names
+        # we used to use different parsers per layout, but too many different layouts are currently used
+        # as the uni passau websites are step by step transformed to the modernised desgin.
+        # at this point only using email addresses on team page seems to be the most unbroken way.
+        return self.parse_mailtos(chair_team_page)
 
     """
     Finds all member of staff in the chair team page by looking for mailto links.
