@@ -106,5 +106,5 @@ def chair_data_to_json(chair_data):
     ]
     data.sort(key=lambda chair: chair["chair_name"])
 
-    json_data = f'{{"timestamp": "{datetime.now().timestamp()}", "data": {json.dumps(data, indent=2)}}}'
+    json_data = json.dumps({"timestamp": str(datetime.now().timestamp()), "data": data}, indent=2)
     return json_data
