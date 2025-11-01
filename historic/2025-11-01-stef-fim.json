@@ -1,0 +1,144 @@
+{
+  "timestamp": "1761961874.250573",
+  "data": [
+    {
+      "chair_name": "AI Engineering",
+      "stef_list": [
+        "Steffen Herbold"
+      ]
+    },
+    {
+      "chair_name": "Algorithmen f\u00fcr Intelligente Systeme",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Angewandte Mathematik",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Angewandtes Maschinelles Lernen",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Computational Rhetoric and NLP",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Data Science",
+      "stef_list": [
+        "Stephanie Pauli"
+      ]
+    },
+    {
+      "chair_name": "Didaktik der Informatik",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Didaktik der Mathematik",
+      "stef_list": [
+        "Stefanie Winkler",
+        "Stefanie Seidl"
+      ]
+    },
+    {
+      "chair_name": "Digitale Bildverarbeitung",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Diskrete Mathematik",
+      "stef_list": [
+        "Stefan Glock"
+      ]
+    },
+    {
+      "chair_name": "Dynamische Systeme",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Eingebettete Systeme",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Funktionalanalysis",
+      "stef_list": []
+    },
+    {
+      "chair_name": "IT-Sicherheit",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Kognitive Sensorsysteme",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Kryptographie",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Mathematical Data Science",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Mathematical Logic",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Mathematische Optimierung",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Mathematische Stochastik",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Nachwuchsforschungsgruppe CAROLL",
+      "stef_list": [
+        "Stephanie Pauli"
+      ]
+    },
+    {
+      "chair_name": "Rechnernetze und Rechnerkommunikation",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Reine Mathematik",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Skalierbare Datenbanksysteme",
+      "stef_list": [
+        "Stefanie Scherzinger",
+        "Stefan Klessinger"
+      ]
+    },
+    {
+      "chair_name": "Software Engineering I",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Software Engineering II",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Symbolic Computation",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Technische Informatik",
+      "stef_list": [
+        "Stefan Katzenbeisser",
+        "Stephanie Pauli"
+      ]
+    },
+    {
+      "chair_name": "Theoretische Informatik",
+      "stef_list": []
+    },
+    {
+      "chair_name": "Verteilte Informationssysteme",
+      "stef_list": [
+        "Stefanie Riederer"
+      ]
+    }
+  ]
+}
