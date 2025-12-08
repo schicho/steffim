@@ -5,6 +5,9 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 
+plt.rcParams["svg.fonttype"] = "none"
+plt.rcParams["pdf.use14corefonts"] = True
+
 STEFFIM_PLOT_STYLE = [
     "seaborn-v0_8-darkgrid",
     {
