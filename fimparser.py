@@ -53,16 +53,15 @@ def parse_chair_overview(chair_page):
     # unfortunately, the table does not have a disctinctive class or id
     # however, the table is inside the <main> tag and each chair can be found in a <tr> and <td> tag
 
-    table = soup.find("main").find("table")
+    table = soup.find("table")
     if table is None:
         raise Exception("no table of chairs found in the overview page")
 
-    trTags = soup.find("main").find_all("tr")
+    trTags = table.find_all("tr")
     for trTag in trTags:
-        # the link to the chair is in the second <td> tag
-        # see chairs.html line 1250...
         tdTags = trTag.find_all("td")
         if len(tdTags) > 1:
+            # the chair link is in a <a> tag in the second column of the table
             aLink = tdTags[1].find("a")
 
             if aLink is None:

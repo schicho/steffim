@@ -36,5 +36,4 @@ if __name__ == "__main__":
         elif args.mode == "plot":
             plot_chair_data()
     except Exception as e:
-        logging.error(f"process failed: {e}")
-        exit(1)
+        raise e
