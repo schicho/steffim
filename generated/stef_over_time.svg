@@ -6,11 +6,11 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-07-01T04:13:31.382373</dc:date>
+    <dc:date>2026-07-19T19:00:20.404052</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.8.2, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -32,256 +32,256 @@ z
    <g id="patch_2">
     <path d="M 18.540865 311.357573 
 L 572.99976 311.357573 
-L 572.99976 18.182115 
-L 18.540865 18.182115 
+L 572.99976 19.94199 
+L 18.540865 19.94199 
 z
-" style="fill: #eaeaf2"/>
+" style="fill: #ffffff"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1">
       <path d="M 18.540865 311.357573 
-L 18.540865 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 18.540865 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_2"/>
     </g>
     <g id="xtick_2">
      <g id="line2d_3">
       <path d="M 43.743542 311.357573 
-L 43.743542 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 43.743542 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_4"/>
      <g id="text_1">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(46.52948 356.99976) rotate(-90)">Mar '23</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(46.341198 356.99976) rotate(-90)">Mar '23</text>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_5">
       <path d="M 68.946219 311.357573 
-L 68.946219 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 68.946219 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_6"/>
      <g id="text_2">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(71.732157 356.99976) rotate(-90)">May '23</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(71.543875 356.99976) rotate(-90)">May '23</text>
      </g>
     </g>
     <g id="xtick_4">
      <g id="line2d_7">
       <path d="M 94.148896 311.357573 
-L 94.148896 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 94.148896 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_8"/>
      <g id="text_3">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(96.934834 356.99976) rotate(-90)">Jul '23</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(96.773506 356.99976) rotate(-90)">Jul '23</text>
      </g>
     </g>
     <g id="xtick_5">
      <g id="line2d_9">
       <path d="M 119.351573 311.357573 
-L 119.351573 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 119.351573 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_10"/>
      <g id="text_4">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(122.137511 356.99976) rotate(-90)">Sep '23</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(121.949229 356.99976) rotate(-90)">Sep '23</text>
      </g>
     </g>
     <g id="xtick_6">
      <g id="line2d_11">
       <path d="M 144.55425 311.357573 
-L 144.55425 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 144.55425 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_12"/>
      <g id="text_5">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(147.340188 356.99976) rotate(-90)">Nov '23</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(147.151906 356.99976) rotate(-90)">Nov '23</text>
      </g>
     </g>
     <g id="xtick_7">
      <g id="line2d_13">
       <path d="M 169.756927 311.357573 
-L 169.756927 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 169.756927 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_14"/>
      <g id="text_6">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(172.542865 356.99976) rotate(-90)">Jan '24</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(172.354584 356.99976) rotate(-90)">Jan '24</text>
      </g>
     </g>
     <g id="xtick_8">
      <g id="line2d_15">
       <path d="M 194.959604 311.357573 
-L 194.959604 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 194.959604 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_16"/>
      <g id="text_7">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(197.745542 356.99976) rotate(-90)">Mar '24</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(197.557261 356.99976) rotate(-90)">Mar '24</text>
      </g>
     </g>
     <g id="xtick_9">
      <g id="line2d_17">
       <path d="M 220.162281 311.357573 
-L 220.162281 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 220.162281 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_18"/>
      <g id="text_8">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(222.948219 356.99976) rotate(-90)">May '24</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(222.759938 356.99976) rotate(-90)">May '24</text>
      </g>
     </g>
     <g id="xtick_10">
      <g id="line2d_19">
       <path d="M 245.364958 311.357573 
-L 245.364958 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 245.364958 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_20"/>
      <g id="text_9">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(248.150896 356.99976) rotate(-90)">Jul '24</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(247.989568 356.99976) rotate(-90)">Jul '24</text>
      </g>
     </g>
     <g id="xtick_11">
      <g id="line2d_21">
       <path d="M 270.567635 311.357573 
-L 270.567635 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 270.567635 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_22"/>
      <g id="text_10">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(273.353573 356.99976) rotate(-90)">Sep '24</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(273.165292 356.99976) rotate(-90)">Sep '24</text>
      </g>
     </g>
     <g id="xtick_12">
      <g id="line2d_23">
       <path d="M 295.770313 311.357573 
-L 295.770313 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 295.770313 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_24"/>
      <g id="text_11">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(298.55625 356.99976) rotate(-90)">Nov '24</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(298.367969 356.99976) rotate(-90)">Nov '24</text>
      </g>
     </g>
     <g id="xtick_13">
      <g id="line2d_25">
       <path d="M 320.97299 311.357573 
-L 320.97299 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 320.97299 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_26"/>
      <g id="text_12">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(323.758927 356.99976) rotate(-90)">Jan '25</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(323.570646 356.99976) rotate(-90)">Jan '25</text>
      </g>
     </g>
     <g id="xtick_14">
      <g id="line2d_27">
       <path d="M 346.175667 311.357573 
-L 346.175667 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 346.175667 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_28"/>
      <g id="text_13">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(348.961604 356.99976) rotate(-90)">Mar '25</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(348.773323 356.99976) rotate(-90)">Mar '25</text>
      </g>
     </g>
     <g id="xtick_15">
      <g id="line2d_29">
       <path d="M 371.378344 311.357573 
-L 371.378344 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 371.378344 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_30"/>
      <g id="text_14">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(374.164281 356.99976) rotate(-90)">May '25</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(373.976 356.99976) rotate(-90)">May '25</text>
      </g>
     </g>
     <g id="xtick_16">
      <g id="line2d_31">
       <path d="M 396.581021 311.357573 
-L 396.581021 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 396.581021 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_32"/>
      <g id="text_15">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(399.366958 356.99976) rotate(-90)">Jul '25</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(399.20563 356.99976) rotate(-90)">Jul '25</text>
      </g>
     </g>
     <g id="xtick_17">
      <g id="line2d_33">
       <path d="M 421.783698 311.357573 
-L 421.783698 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 421.783698 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_34"/>
      <g id="text_16">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(424.569635 356.99976) rotate(-90)">Sep '25</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(424.381354 356.99976) rotate(-90)">Sep '25</text>
      </g>
     </g>
     <g id="xtick_18">
      <g id="line2d_35">
       <path d="M 446.986375 311.357573 
-L 446.986375 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 446.986375 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_36"/>
      <g id="text_17">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(449.772312 356.99976) rotate(-90)">Nov '25</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(449.584031 356.99976) rotate(-90)">Nov '25</text>
      </g>
     </g>
     <g id="xtick_19">
      <g id="line2d_37">
       <path d="M 472.189052 311.357573 
-L 472.189052 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 472.189052 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_38"/>
      <g id="text_18">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(474.974989 356.99976) rotate(-90)">Jan '26</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(474.786708 356.99976) rotate(-90)">Jan '26</text>
      </g>
     </g>
     <g id="xtick_20">
      <g id="line2d_39">
       <path d="M 497.391729 311.357573 
-L 497.391729 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 497.391729 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_40"/>
      <g id="text_19">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(500.177666 356.99976) rotate(-90)">Mar '26</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(499.989385 356.99976) rotate(-90)">Mar '26</text>
      </g>
     </g>
     <g id="xtick_21">
      <g id="line2d_41">
       <path d="M 522.594406 311.357573 
-L 522.594406 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 522.594406 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_42"/>
      <g id="text_20">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(525.380343 356.99976) rotate(-90)">May '26</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(525.192062 356.99976) rotate(-90)">May '26</text>
      </g>
     </g>
     <g id="xtick_22">
      <g id="line2d_43">
       <path d="M 547.797083 311.357573 
-L 547.797083 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 547.797083 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_44"/>
      <g id="text_21">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(550.58302 356.99976) rotate(-90)">Jul '26</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace" transform="translate(550.421692 356.99976) rotate(-90)">Jul '26</text>
      </g>
     </g>
     <g id="xtick_23">
      <g id="line2d_45">
       <path d="M 572.99976 311.357573 
-L 572.99976 18.182115 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+L 572.99976 19.94199 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_46"/>
     </g>
@@ -289,143 +289,143 @@ L 572.99976 18.182115
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
      <g id="line2d_47">
-      <path d="M 18.540865 298.031415 
-L 572.99976 298.031415 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+      <path d="M 18.540865 298.11141 
+L 572.99976 298.11141 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_48"/>
      <g id="text_22">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="301.857197" transform="rotate(-0 15.040865 301.857197)">7</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="301.910238" transform="rotate(-0 15.040865 301.910238)">7</text>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_49">
-      <path d="M 18.540865 244.726787 
-L 572.99976 244.726787 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+      <path d="M 18.540865 245.126758 
+L 572.99976 245.126758 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_50"/>
      <g id="text_23">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="248.552568" transform="rotate(-0 15.040865 248.552568)">8</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="248.925586" transform="rotate(-0 15.040865 248.925586)">8</text>
      </g>
     </g>
     <g id="ytick_3">
      <g id="line2d_51">
-      <path d="M 18.540865 191.422158 
-L 572.99976 191.422158 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+      <path d="M 18.540865 192.142107 
+L 572.99976 192.142107 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_52"/>
      <g id="text_24">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="195.247939" transform="rotate(-0 15.040865 195.247939)">9</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="195.940935" transform="rotate(-0 15.040865 195.940935)">9</text>
      </g>
     </g>
     <g id="ytick_4">
      <g id="line2d_53">
-      <path d="M 18.540865 138.117529 
-L 572.99976 138.117529 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+      <path d="M 18.540865 139.157456 
+L 572.99976 139.157456 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_54"/>
      <g id="text_25">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="141.943311" transform="rotate(-0 15.040865 141.943311)">10</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="142.956284" transform="rotate(-0 15.040865 142.956284)">10</text>
      </g>
     </g>
     <g id="ytick_5">
      <g id="line2d_55">
-      <path d="M 18.540865 84.812901 
-L 572.99976 84.812901 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+      <path d="M 18.540865 86.172804 
+L 572.99976 86.172804 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_56"/>
      <g id="text_26">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="88.638682" transform="rotate(-0 15.040865 88.638682)">11</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="89.971632" transform="rotate(-0 15.040865 89.971632)">11</text>
      </g>
     </g>
     <g id="ytick_6">
      <g id="line2d_57">
-      <path d="M 18.540865 31.508272 
-L 572.99976 31.508272 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linecap: round"/>
+      <path d="M 18.540865 33.188153 
+L 572.99976 33.188153 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #cbcbcb"/>
      </g>
      <g id="line2d_58"/>
      <g id="text_27">
-      <text style="fill: #262626; font: 10px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="35.334053" transform="rotate(-0 15.040865 35.334053)">12</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end" x="15.040865" y="36.986981" transform="rotate(-0 15.040865 36.986981)">12</text>
      </g>
     </g>
    </g>
    <g id="line2d_59">
-    <path d="M 43.743542 84.812901 
-L 56.344881 84.812901 
-L 68.946219 84.812901 
-L 81.547558 84.812901 
-L 94.148896 298.031415 
-L 106.750235 84.812901 
-L 119.351573 84.812901 
-L 131.952912 84.812901 
-L 144.55425 84.812901 
-L 157.155589 84.812901 
-L 169.756927 84.812901 
-L 182.358266 138.117529 
-L 194.959604 84.812901 
-L 207.560943 84.812901 
-L 220.162281 84.812901 
-L 232.76362 84.812901 
-L 245.364958 31.508272 
-L 257.966297 138.117529 
-L 270.567635 138.117529 
-L 283.168974 84.812901 
-L 295.770313 84.812901 
-L 308.371651 84.812901 
-L 320.97299 84.812901 
-L 333.574328 138.117529 
-L 346.175667 138.117529 
-L 358.777005 138.117529 
-L 371.378344 138.117529 
-L 383.979682 138.117529 
-L 396.581021 138.117529 
-L 409.182359 138.117529 
-L 421.783698 138.117529 
-L 434.385036 138.117529 
-L 446.986375 84.812901 
-L 459.587713 84.812901 
-L 472.189052 84.812901 
-L 484.79039 84.812901 
-L 497.391729 84.812901 
-L 509.993067 84.812901 
-L 522.594406 84.812901 
-L 535.195744 84.812901 
-L 547.797083 138.117529 
-" clip-path="url(#pdafaa28970)" style="fill: none; stroke: #ff8800; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 43.743542 86.172804 
+L 56.344881 86.172804 
+L 68.946219 86.172804 
+L 81.547558 86.172804 
+L 94.148896 298.11141 
+L 106.750235 86.172804 
+L 119.351573 86.172804 
+L 131.952912 86.172804 
+L 144.55425 86.172804 
+L 157.155589 86.172804 
+L 169.756927 86.172804 
+L 182.358266 139.157456 
+L 194.959604 86.172804 
+L 207.560943 86.172804 
+L 220.162281 86.172804 
+L 232.76362 86.172804 
+L 245.364958 33.188153 
+L 257.966297 139.157456 
+L 270.567635 139.157456 
+L 283.168974 86.172804 
+L 295.770313 86.172804 
+L 308.371651 86.172804 
+L 320.97299 86.172804 
+L 333.574328 139.157456 
+L 346.175667 139.157456 
+L 358.777005 139.157456 
+L 371.378344 139.157456 
+L 383.979682 139.157456 
+L 396.581021 139.157456 
+L 409.182359 139.157456 
+L 421.783698 139.157456 
+L 434.385036 139.157456 
+L 446.986375 86.172804 
+L 459.587713 86.172804 
+L 472.189052 86.172804 
+L 484.79039 86.172804 
+L 497.391729 86.172804 
+L 509.993067 86.172804 
+L 522.594406 86.172804 
+L 535.195744 86.172804 
+L 547.797083 139.157456 
+" clip-path="url(#pb35c93e6d8)" style="fill: none; stroke: #ff8800; stroke-width: 4"/>
    </g>
    <g id="patch_3">
     <path d="M 18.540865 311.357573 
-L 18.540865 18.182115 
-" style="fill: none"/>
+L 18.540865 19.94199 
+" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_4">
     <path d="M 572.99976 311.357573 
-L 572.99976 18.182115 
-" style="fill: none"/>
+L 572.99976 19.94199 
+" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_5">
     <path d="M 18.540865 311.357573 
 L 572.99976 311.357573 
-" style="fill: none"/>
+" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_6">
-    <path d="M 18.540865 18.182115 
-L 572.99976 18.182115 
-" style="fill: none"/>
+    <path d="M 18.540865 19.94199 
+L 572.99976 19.94199 
+" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_28">
-    <text style="fill: #262626; font: 12px 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: middle" x="295.770312" y="12.182115" transform="rotate(-0 295.770312 12.182115)">#Stef Over Time</text>
+    <text style="font-size: 14.4px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: middle" x="295.770312" y="13.94199" transform="rotate(-0 295.770312 13.94199)">#Stef Over Time</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pdafaa28970">
-   <rect x="18.540865" y="18.182115" width="554.458895" height="293.175458"/>
+  <clipPath id="pb35c93e6d8">
+   <rect x="18.540865" y="19.94199" width="554.458895" height="291.415582"/>
   </clipPath>
  </defs>
 </svg>

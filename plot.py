@@ -5,15 +5,19 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 
-plt.rcParams["svg.fonttype"] = "none"
-plt.rcParams["pdf.use14corefonts"] = True
 
 STEFFIM_PLOT_STYLE = [
-    "seaborn-v0_8-darkgrid",
+    "fivethirtyeight",
     {
         "font.family": "monospace",
         "font.size": 10,
         "axes.prop_cycle": plt.cycler("color", ["#ff8800"]),
+        "svg.fonttype": "none",
+        "pdf.use14corefonts": True,
+        "figure.facecolor": "#ffffff",
+        "axes.facecolor": "#ffffff",
+        "axes.edgecolor": "#ffffff",
+        "savefig.facecolor": "#ffffff",
     },
 ]
 
