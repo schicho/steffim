@@ -106,5 +106,9 @@ def chair_data_to_json(chair_data):
     ]
     data.sort(key=lambda chair: chair["chair_name"])
 
-    json_data = json.dumps({"timestamp": str(datetime.now().timestamp()), "data": data}, indent=2)
+    json_data = json.dumps(
+        {"timestamp": str(datetime.now().timestamp()), "data": data},
+        ensure_ascii=False,
+        indent=2,
+    )
     return json_data
